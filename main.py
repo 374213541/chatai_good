@@ -201,7 +201,7 @@ st.markdown("""
 heart_button = st.button("❤️", key="heart_button", help="点击听情话")
 if heart_button:
     st.session_state.heart_clicked = True
-    st.experimental_rerun()
+    st.rerun()
 
 # 处理心跳按钮点击
 if st.session_state.get('heart_clicked'):
@@ -221,7 +221,7 @@ if st.session_state.get('heart_clicked'):
         "content": love_text
     })
     
-    st.experimental_rerun()
+    st.rerun()
 
 # 标题
 st.markdown(
@@ -345,14 +345,14 @@ with col1:
         # 音乐控制按钮
         if st.button("⏸️ 暂停背景音乐", key="pause_music"):
             st.session_state.music_playing = False
-            st.experimental_rerun()
+            st.rerun()
     else:
         # 音乐播放按钮
         if st.button("▶️ 播放背景音乐", key="play_music"):
             st.session_state.music_playing = True
             st.session_state.music_position = 0.0
             st.session_state.last_play_time = time.time()
-            st.experimental_rerun()
+            st.rerun()
 
 # 从父窗口接收音乐位置更新
 components.html("""
